@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.button {
+    padding:10px 30px;
+    background-color: white;
+    text-transform: uppercase;
+    font-weight: 300;
+    cursor: pointer;
+    animation: fade 1s ease forwards;
+}
+
+@keyframes fade {
+    from {
+        opacity :1 ;
+        pointer-events: all;
+    }
+
+    to {
+        opacity:0;
+        pointer-events:none;
+    }
+}
+
+h1::selection {
+    background-color: coral;
+    color: white;
+}
