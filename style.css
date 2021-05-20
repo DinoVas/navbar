@@ -4,36 +4,107 @@
     margin: 0;
 }
 
-.container {
+html {
+    font-size:10px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+nav {
     display: flex;
+    justify-content: space-around;
     align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
+    min-height: 8vh;
+    background-color: #5D4954;
 }
 
-.button {
-    padding:10px 30px;
-    background-color: white;
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    font-size: 1.4rem;
+}
+
+.nav-links a {
+    color: rgb(231, 222, 222);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.logo {
+    color: rgb(231, 222, 222);
     text-transform: uppercase;
-    font-weight: 300;
-    cursor: pointer;
-    animation: fade 1s ease forwards;
+    letter-spacing: 5px;
+    font-size: 2rem;
 }
 
-@keyframes fade {
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(226, 226, 226);
+    margin: 5px;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width:1024px) {
+    .nav-links {
+        display: flex;
+        justify-content: space-around;
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    body {
+        overflow-x: hidden;
+    }
+    .nav-links {
+        position:absolute;
+        right:0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #5D4954;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform .5s ease-in;
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .burger {
+        display: block;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
     from {
-        opacity :1 ;
-        pointer-events: all;
+        opacity: 0;
+        transform: translateX(50px);
     }
 
     to {
-        opacity:0;
-        pointer-events:none;
+        opacity: 1;
+        transform: translateX(0px);
     }
-}
-
-h1::selection {
-    background-color: coral;
-    color: white;
 }
